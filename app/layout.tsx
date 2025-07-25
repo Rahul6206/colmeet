@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import ContextClearkProvider from "@/components/Provider/ContextClearkProvider";
 import "./globals.css";
 
 
@@ -14,10 +15,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ContextClearkProvider>
     <html lang="en"  crosspilot="true">
       <body >
         {children}
       </body>
     </html>
+    </ContextClearkProvider>
   );
 }
