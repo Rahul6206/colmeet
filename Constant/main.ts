@@ -1,4 +1,10 @@
-import { Clock, Code2, Calendar, Users } from "lucide-react";
+
+import { g } from "motion/react-client";
+import {Clock8} from "@/components/Icons/Clock";
+import {Calendar1} from "@/components/Icons/Clander";
+import {Users} from "@/components/Icons/UserIcon";
+import {Code} from "@/components/Icons/CodeIcon";
+
 
 export const INTERVIEW_CATEGORY = [
   { id: "upcoming", title: "Upcoming Interviews", variant: "outline" },
@@ -29,32 +35,44 @@ export const TIME_SLOTS = [
 
 export const QUICK_ACTIONS = [
   {
-    icon: Code2,
+    icon: Code,
     title: "New Call",
     description: "Start an instant call",
     color: "primary",
-    gradient: "from-primary/10 via-primary/5 to-transparent",
+    gradient: {
+      light: "from-primary/10 via-primary/5 to-transparent",
+      dark: "from-primary/30 via-primary/10 to-transparent",
+    },
   },
   {
     icon: Users,
     title: "Join Interview",
     description: "Enter via invitation link",
     color: "purple-500",
-    gradient: "from-purple-500/10 via-purple-500/5 to-transparent",
+    gradient: {
+      light: "from-purple-500/10 via-purple-500/5 to-transparent",
+      dark: "from-purple-500/30 via-purple-500/10 to-transparent",
+    },
   },
   {
-    icon: Calendar,
+    icon: Calendar1,
     title: "Schedule",
     description: "Plan upcoming interviews",
     color: "blue-500",
-    gradient: "from-blue-500/10 via-blue-500/5 to-transparent",
+    gradient: {
+      light: "from-blue-500/10 via-blue-500/5 to-transparent",
+      dark: "from-blue-500/30 via-blue-500/10 to-transparent",
+    },
   },
   {
-    icon: Clock,
+    icon: Clock8,
     title: "Recordings",
     description: "Access past interviews",
     color: "orange-500",
-    gradient: "from-orange-500/10 via-orange-500/5 to-transparent",
+    gradient: {
+      light: "from-orange-500/10 via-orange-500/5 to-transparent",
+      dark: "from-orange-500/30 via-orange-500/10 to-transparent",
+    },
   },
 ];
 
