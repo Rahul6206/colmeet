@@ -18,7 +18,7 @@ export const syncUser = mutation({
             name: args.name,
             email: args.email,
             profilePicture: args.image,
-            role: "candidate", // Default role, can be changed later
+            role: "interviewer", // Default role, can be changed later
             clarkID: args.clerkId
         });
 
