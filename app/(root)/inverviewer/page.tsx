@@ -1,15 +1,31 @@
 "use client";
 
 import React from 'react';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { QUICK_ACTIONS } from '@/Constant/main';
 import userRole from '@/components/hooks/userRole';
 import ActionCard from '@/components/ui/ActionCard';
+import MeetingDialog from '@/components/ui/MeetingDialog';
 const dashboard = () => {
-  // const { isloading, Role } = userRole();
-  const isInterviewer = 'interviewer' === 'interviewer';
-  const handleQuickAction = (title:string) => {
-    // Handle quick action click
-    console.log(`Quick action clicked: ${title}`);
+  const router = useRouter();
+  const { isloading, Role } = userRole();
+  const [modalType, setModalType] = useState<"start" | "join">();
+  const isInterviewer = Role === 'interviewer';
+  const [showModal, setShowModal] = useState(false);
+  const handleQuickAction = (title: string) => {
+    switch (title) {
+      case "New Call":
+        setModalType("start");
+        setShowModal(true);
+        break;
+      case "Join Interview":
+        setModalType("join");
+        setShowModal(true);
+        break;
+      default:
+        router.push(`/${title.toLowerCase()}`);
+    }
   };
   return (
     <div>
@@ -23,7 +39,7 @@ const dashboard = () => {
             : "Access your upcoming interviews and preparations"}
         </p>
       </div>
-        {isInterviewer ? (
+      {isInterviewer ? (
         <>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {QUICK_ACTIONS.map((action) => (
@@ -34,9 +50,15 @@ const dashboard = () => {
               />
             ))}
           </div>
+          <MeetingDialog
+            isOpen={showModal}
+            onClose={() => setShowModal(false)}
+            title={modalType === "join" ? "Join Meeting" : "Start Meeting"}
+            isJoinMeeting={modalType === "join"}
+          />
 
-          </>
-        ): null}
+        </>
+      ) : null}
 
 
     </div>

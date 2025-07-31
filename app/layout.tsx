@@ -4,6 +4,7 @@ import ContextClearkProvider from "@/components/Provider/ContextClearkProvider";
 import "./globals.css";
 import { ThemeProvider } from "@/components/Provider/ThemProvider";
 import Navebar from "@/components/ui/Navebar";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "ColMeet",
@@ -31,6 +32,7 @@ export default function RootLayout({
                 </main>
               </div>
       </ThemeProvider>
+      <Toaster/>
       </body>
     </html>
     </ContextClearkProvider>

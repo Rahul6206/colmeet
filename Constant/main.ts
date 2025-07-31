@@ -40,8 +40,8 @@ export const QUICK_ACTIONS = [
     description: "Start an instant call",
     color: "primary",
     gradient: {
-      light: "from-primary/10 via-primary/5 to-transparent",
-      dark: "from-primary/30 via-primary/10 to-transparent",
+      dark: "bg-gradient-to-br from-primary/40 via-primary/20 to-gray-900",
+      light: "bg-gradient-to-br not-dark:from-slate-500 not-dark:via-slate-600 not-dark:to-gray-900",
     },
   },
   {
@@ -50,8 +50,8 @@ export const QUICK_ACTIONS = [
     description: "Enter via invitation link",
     color: "purple-500",
     gradient: {
-      light: "from-purple-500/10 via-purple-500/5 to-transparent",
-      dark: "from-purple-500/30 via-purple-500/10 to-transparent",
+      dark: "bg-gradient-to-br from-purple-600/40 via-purple-500/20 to-gray-900",
+      light: "bg-gradient-to-br not-dark:from-purple-200 not-dark:via-purple-600 not-dark:to-purple-900",
     },
   },
   {
@@ -60,9 +60,10 @@ export const QUICK_ACTIONS = [
     description: "Plan upcoming interviews",
     color: "blue-500",
     gradient: {
-      light: "from-blue-500/10 via-blue-500/5 to-transparent",
-      dark: "from-blue-500/30 via-blue-500/10 to-transparent",
+      dark: "bg-gradient-to-br from-blue-600/40 via-blue-500/20 to-gray-900",
+      light: "bg-gradient-to-br not-dark:from-blue-200 not-dark:via-blue-500 not-dark:to-blue-900",
     },
+   
   },
   {
     icon: Clock8,
@@ -70,8 +71,8 @@ export const QUICK_ACTIONS = [
     description: "Access past interviews",
     color: "orange-500",
     gradient: {
-      light: "from-orange-500/10 via-orange-500/5 to-transparent",
-      dark: "from-orange-500/30 via-orange-500/10 to-transparent",
+      dark: "bg-gradient-to-br from-orange-400/20 via-orange-300/10 to-gray-900",
+      light: "bg-gradient-to-br not-dark:from-orange-200 not-dark:via-orange-500 not-dark:to-orange-900",
     },
   },
 ];
@@ -206,3 +207,6 @@ export interface CodeQuestion {
 }
 
 export type QuickActionType = (typeof QUICK_ACTIONS)[number];
+
+
+ {/* from-blue-200 via-white to-blue-300 */}

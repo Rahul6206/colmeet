@@ -53,9 +53,9 @@ const numberVariants: Variants = {
 };
 
 const Calendar1 = ({
-  width = 28,
-  height = 28,
-  strokeWidth = 2,
+  width = 32,
+  height = 32,
+  strokeWidth = 3,
   stroke = "#ffffff",
   ...props
 }: Calendar1Props) => {
@@ -131,7 +131,7 @@ const Calendar1 = ({
           y="18"
           fontSize="8"
           textAnchor="middle"
-          fill="currentColor"
+          fill="white"
           stroke="none"
           key={currentNumber}
           initial="initial"
