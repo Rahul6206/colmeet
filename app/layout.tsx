@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import ContextClearkProvider from "@/components/Provider/ContextClearkProvider";
+import "@stream-io/video-react-sdk/dist/css/styles.css";
 import "./globals.css";
 import { ThemeProvider } from "@/components/Provider/ThemProvider";
 import Navebar from "@/components/ui/Navebar";
