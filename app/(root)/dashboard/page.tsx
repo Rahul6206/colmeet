@@ -1,21 +1,20 @@
 "use client";
 
-import React from 'react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { QUICK_ACTIONS } from '@/Constant/main';
 import ActionCard from '@/components/ui/ActionCard';
 import MeetingDialog from '@/components/ui/MeetingDialog';
 import { useUser,SignIn } from '@clerk/nextjs';
-import LoaderUI from '@/components/ui/LoodingUI';
+import LoaderUI from '@/components/ui/LoodingUI'; 
 
-
-
-  
-
-
-const dashboard = () => {
+const Dashboard = () => {
+  const router = useRouter();
   const { isSignedIn, user, isLoaded } = useUser()
+
+  // Declare all hooks at the top level, before any conditional returns
+  const [modalType, setModalType] = useState<"start" | "join">();
+  const [showModal, setShowModal] = useState(false);
 
   if (!isLoaded) {
     return <LoaderUI/>
@@ -25,13 +24,7 @@ const dashboard = () => {
     return <SignIn/>
   }
 
-
-  const router = useRouter();
   
-  const [modalType, setModalType] = useState<"start" | "join">();
-  
-  const [showModal, setShowModal] = useState(false);
-    
   const handleQuickAction = (title: string) => {
     switch (title) {
       case "New Call":
@@ -46,6 +39,7 @@ const dashboard = () => {
         router.push(`/${title.toLowerCase()}`);
     }
   };
+
   return (
     <div>
       <div className="rounded-lg bg-card p-6 border shadow-sm mb-10">
@@ -53,8 +47,6 @@ const dashboard = () => {
           Welcome {user.firstName}
         </h1>
         <p className="text-muted-foreground mt-2 not-dark:text-gray-700">
-          
-          
             Access your upcoming interviews and preparations
         </p>
       </div>
@@ -75,11 +67,8 @@ const dashboard = () => {
             isJoinMeeting={modalType === "join"}
           />
 
-  
-
-
     </div>
   )
 }
 
-export default dashboard
+export default Dashboard

@@ -1,4 +1,5 @@
-import { DeviceSettings, useCall, VideoPreview } from "@stream-io/video-react-sdk";
+import { DeviceSettings,  VideoPreview } from "@stream-io/video-react-sdk";
+import { useCall } from "@stream-io/video-react-sdk";
 import { useEffect, useState } from "react";
 import { Card } from "./card";
 import { CameraIcon, MicIcon, SettingsIcon } from "lucide-react";
@@ -8,27 +9,25 @@ import { Button } from "./button";
 function MeetingSetup({ onSetupComplete }: { onSetupComplete: () => void }) {
   const [isCameraDisabled, setIsCameraDisabled] = useState(true);
   const [isMicDisabled, setIsMicDisabled] = useState(false);
-
   const call = useCall();
-
-  if (!call) return null;
-
+  
   useEffect(() => {
     if (isCameraDisabled) {
-      call.camera.disable();
+      call?.camera.disable();
     } else {
-      call.camera.enable();
+      call?.camera.enable();
     }
-  }, [isCameraDisabled, call.camera]);
-
+  }, [isCameraDisabled, call?.camera]);
+  
   useEffect(() => {
     if (isMicDisabled) {
-      call.microphone.disable();
+      call?.microphone.disable();
     } else {
-      call.microphone.enable();
+      call?.microphone.enable();
     }
-  }, [isMicDisabled, call.microphone]);
-
+  }, [isMicDisabled, call?.microphone]);
+  
+  if (!call) return null;
   const handleJoin = async () => {
     await call.join();
     onSetupComplete();

@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 
 const Dashboard = () => {
-  const {isloading} = userRole();
-  if(isloading ) return null;
+  const {isLoading} = userRole();
+  if(isLoading ) return null;
   
   return (
     <>

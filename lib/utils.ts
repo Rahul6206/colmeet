@@ -1,5 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
-import { addHours, intervalToDuration, isAfter, isBefore, isWithinInterval } from "date-fns";
+import { addHours, intervalToDuration,  isBefore, isWithinInterval } from "date-fns";
 import { twMerge } from "tailwind-merge";
 import { Doc } from "@/convex/_generated/dataModel";
 
@@ -8,28 +8,27 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 type Interview = Doc<"interviews">;
-type User = Doc<"user">;
 
-export const groupInterviews = (interviews: Interview[]) => {
-  if (!interviews) return {};
+// export const groupInterviews = (interviews: Interview[]) => {
+//   if (!interviews) return {};
 
-  return interviews.reduce((acc: any, interview: Interview) => {
-    const date = new Date(interview.startTime);
-    const now = new Date();
+//   return interviews.reduce((acc: any, interview: Interview) => {
+//     const date = new Date(interview.startTime);
+//     const now = new Date();
 
-    if (interview.status === "succeeded") {
-      acc.succeeded = [...(acc.succeeded || []), interview];
-    } else if (interview.status === "failed") {
-      acc.failed = [...(acc.failed || []), interview];
-    } else if (isBefore(date, now)) {
-      acc.completed = [...(acc.completed || []), interview];
-    } else if (isAfter(date, now)) {
-      acc.upcoming = [...(acc.upcoming || []), interview];
-    }
+//     if (interview.status === "succeeded") {
+//       acc.succeeded = [...(acc.succeeded || []), interview];
+//     } else if (interview.status === "failed") {
+//       acc.failed = [...(acc.failed || []), interview];
+//     } else if (isBefore(date, now)) {
+//       acc.completed = [...(acc.completed || []), interview];
+//     } else if (isAfter(date, now)) {
+//       acc.upcoming = [...(acc.upcoming || []), interview];
+//     }
 
-    return acc;
-  }, {});
-};
+//     return acc;
+//   }, {});
+// };
 
 // export const getCandidateInfo = (users: User[], candidateId: string) => {
 //   const candidate = users?.find((user) => user.clarkId === candidateId);

@@ -3,20 +3,24 @@ import { useUser } from '@clerk/nextjs';
 import { useQuery } from 'convex/react';
 
 
-const userRole = () => {
-    const {user}= useUser();
 
-    const Userdata= useQuery(api.users.getUserByClerkId, {
-        clerkId: user?.id || '' 
-    });
-    const isloading = Userdata === undefined;
-
-  return {
-    isloading,
-    
-  }
-    
+interface UseUserRoleResult {
+  isLoading: boolean;
   
 }
 
-export default userRole
+const useUserRole = (): UseUserRoleResult => {
+  const { user } = useUser();
+
+  const userRoleData = useQuery(api.users.getUserByClerkId, {
+    clerkId: user?.id || '' // Provides an empty string if user?.id is undefined, avoiding errors
+  });
+
+  const isLoading = userRoleData === undefined; // Check if data is still loading
+
+  return {
+    isLoading
+  };
+};
+
+export default useUserRole;
