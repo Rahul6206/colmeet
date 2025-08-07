@@ -1,4 +1,4 @@
-import { DeviceSettings, MenuVisualType, useCall, VideoPreview } from "@stream-io/video-react-sdk";
+import { DeviceSettings, useCall, VideoPreview } from "@stream-io/video-react-sdk";
 import { useEffect, useState } from "react";
 import { Card } from "./card";
 import { CameraIcon, MicIcon, SettingsIcon } from "lucide-react";
@@ -14,13 +14,19 @@ function MeetingSetup({ onSetupComplete }: { onSetupComplete: () => void }) {
   if (!call) return null;
 
   useEffect(() => {
-    if (isCameraDisabled) call.camera.disable();
-    else call.camera.enable();
+    if (isCameraDisabled) {
+      call.camera.disable();
+    } else {
+      call.camera.enable();
+    }
   }, [isCameraDisabled, call.camera]);
 
   useEffect(() => {
-    if (isMicDisabled) call.microphone.disable();
-    else call.microphone.enable();
+    if (isMicDisabled) {
+      call.microphone.disable();
+    } else {
+      call.microphone.enable();
+    }
   }, [isMicDisabled, call.microphone]);
 
   const handleJoin = async () => {
@@ -111,7 +117,7 @@ function MeetingSetup({ onSetupComplete }: { onSetupComplete: () => void }) {
                     <div >
                       <DeviceSettings visualType={undefined} />
                     </div>
-                    
+
                   </div>
                 </div>
 

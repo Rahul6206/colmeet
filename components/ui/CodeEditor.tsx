@@ -5,6 +5,7 @@ import { ScrollArea, ScrollBar } from "./scroll-area";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./select";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import { AlertCircleIcon, BookIcon, LightbulbIcon } from "lucide-react";
+import Image from "next/image";
 import Editor from "@monaco-editor/react";
 
 function CodeEditor() {
@@ -61,10 +62,12 @@ function CodeEditor() {
                       {/* SELECT VALUE */}
                       <SelectValue>
                         <div className="flex items-center gap-2">
-                          <img
+                          <Image
                             src={`/${language}.png`}
                             alt={language}
                             className="w-5 h-5 object-contain"
+                            height={50}
+                            width={50}
                           />
                           {LANGUAGES.find((l) => l.id === language)?.name}
                         </div>
@@ -75,10 +78,12 @@ function CodeEditor() {
                       {LANGUAGES.map((lang) => (
                         <SelectItem key={lang.id} value={lang.id}>
                           <div className="flex items-center gap-2">
-                            <img
+                            <Image
                               src={`/${lang.id}.png`}
                               alt={lang.name}
                               className="w-5 h-5 object-contain"
+                               height={50}
+                            width={50}
                             />
                             {lang.name}
                           </div>

@@ -31,31 +31,31 @@ export const groupInterviews = (interviews: Interview[]) => {
   }, {});
 };
 
-export const getCandidateInfo = (users: User[], candidateId: string) => {
-  const candidate = users?.find((user) => user.clarkID === candidateId);
-  return {
-    name: candidate?.name || "Unknown Candidate",
-    image: candidate?.profilePicture || "",
-    initials:
-      candidate?.name
-        ?.split(" ")
-        .map((n) => n[0])
-        .join("") || "UC",
-  };
-};
+// export const getCandidateInfo = (users: User[], candidateId: string) => {
+//   const candidate = users?.find((user) => user.clarkId === candidateId);
+//   return {
+//     name: candidate?.name || "Unknown Candidate",
+//     image: candidate?.profilePicture || "",
+//     initials:
+//       candidate?.name
+//         ?.split(" ")
+//         .map((n) => n[0])
+//         .join("") || "UC",
+//   };
+// };
 
-export const getInterviewerInfo = (users: User[], interviewerId: string) => {
-  const interviewer = users?.find((user) => user.clarkID === interviewerId);
-  return {
-    name: interviewer?.name || "Unknown Interviewer",
-    image: interviewer?.profilePicture,
-    initials:
-      interviewer?.name
-        ?.split(" ")
-        .map((n) => n[0])
-        .join("") || "UI",
-  };
-};
+// export const getInterviewerInfo = (users: User[], interviewerId: string) => {
+//   const interviewer = users?.find((user) => user.clarkID === interviewerId);
+//   return {
+//     name: interviewer?.name || "Unknown Interviewer",
+//     image: interviewer?.profilePicture,
+//     initials:
+//       interviewer?.name
+//         ?.split(" ")
+//         .map((n) => n[0])
+//         .join("") || "UI",
+//   };
+// };
 
 export const calculateRecordingDuration = (startTime: string, endTime: string) => {
   const start = new Date(startTime);

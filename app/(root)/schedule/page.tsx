@@ -8,11 +8,8 @@ import InterviewScheduleUI from "./InterviewScheduleUI";
 function Schedule() {
   const router = useRouter();
 
-  const { Role, isloading } = userRole();
- const isInterviewer = Role === "interviewer" || "candidate";
+  const { isloading } = userRole();
   if (isloading) return <LoaderUI />;
-  if (!isInterviewer) return router.push("/");
-
   return <InterviewScheduleUI />;
 }
 

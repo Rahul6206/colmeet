@@ -1,6 +1,5 @@
 import {
   AlertDialog,
-  AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
@@ -9,9 +8,9 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
-import { Button } from "@/components/ui/button"
+
 import { InteractiveHoverButton } from "../magicui/interactive-hover-button"
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
+import {  SignInButton } from '@clerk/nextjs'
 export function AlertPage() {
   return (
     <AlertDialog>

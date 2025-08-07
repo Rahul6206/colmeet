@@ -1,9 +1,8 @@
 'use client';
-import { Button } from '@/components/ui/button';
+
 import { cn } from "@/lib/utils";
 import { GridPattern } from "@/components/magicui/grid-pattern";
 import SplitText from "@/components/ui/SplitText";
-import { MagicCard } from "@/components/magicui/magic-card";
 import { GlowingEffectDemoSecond } from "@/components/ui/Herogrid";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import Link from 'next/link';

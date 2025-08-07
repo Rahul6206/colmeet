@@ -2,7 +2,7 @@
 
 import { Box, Lock, Search, Settings, Sparkles } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-import { img } from "motion/react-client";
+
 
 
 export function GlowingEffectDemoSecond() {

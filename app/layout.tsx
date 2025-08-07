@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import ContextClearkProvider from "@/components/Provider/ContextClearkProvider";
 import "@stream-io/video-react-sdk/dist/css/styles.css";
 import "./globals.css";
@@ -40,4 +39,3 @@ export default function RootLayout({
     </ContextClearkProvider>
   );
 }
-// bg-gradient-to-r from-slate-950 via-slate-800 to-slate-950
