@@ -7,6 +7,7 @@ import { CalendarIcon } from "lucide-react";
 import { Badge } from "./Badge";
 import { Button } from "./button";
 import { MagicCard } from "../magicui/magic-card";
+import { useTheme } from "next-themes";
 
 type Interview = Doc<"interviews">;
 
@@ -15,11 +16,13 @@ function MeetingCard({  intervie }: {  intervie: Interview }) {
 
   const status = getMeetingStatus( intervie);
   const formattedDate = format(new Date( intervie.startTime), "EEEE, MMMM d · h:mm a");
+  const {theme}=useTheme();
 
   return (
-      <MagicCard className=' rounded-xl shadow-none' gradientSize={100}>
-    <Card className="z-10">
-      <CardHeader className="space-y-2">
+    <Card className="p-0 max-w-sm w-full shadow-none border-none h-full max-h-sm">
+      <MagicCard gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
+        className="p-0 ">
+      <CardHeader className=" p-4 [.border-b]:pb-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 text-sm text-muted-foreground not-dark:text-black">
             <CalendarIcon className="h-4 w-4 not-dark:text-black" />
@@ -36,7 +39,7 @@ function MeetingCard({  intervie }: {  intervie: Interview }) {
           </Badge>
         </div>
 
-        <CardTitle className="not-dark:text-black" >{ intervie.title}</CardTitle>
+        <CardTitle className="not-dark:text-black " >{ intervie.title}</CardTitle>
 
         { intervie.description && (
           <CardDescription className="line-clamp-2 not-dark:text-black">{ intervie.description}</CardDescription>
@@ -56,8 +59,8 @@ function MeetingCard({  intervie }: {  intervie: Interview }) {
           </Button>
         )}
       </CardContent>
-    </Card>
     </MagicCard>
+    </Card>
   );
 }
 export default MeetingCard;

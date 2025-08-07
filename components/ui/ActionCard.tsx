@@ -4,12 +4,6 @@ import React from "react";
 import { QuickActionType } from "@/Constant/main";
 import SpotlightCard from "./SportLightCard";
 
-// some weird tw bug, but this is how it works
-//  dark: "from-primary/30 via-primary/10 to-transparent",
-//  dark: "from-purple-500/30 via-purple-500/10 to-transparent",
-//  dark: "from-blue-500/30 via-blue-500/10 to-transparent",
-//  dark: "from-orange-500/30 via-orange-500/10 to-transparent",
-
 
 function ActionCard({ action, onClick }: { action: QuickActionType; onClick: () => void }) {
   return (
@@ -30,7 +24,7 @@ function ActionCard({ action, onClick }: { action: QuickActionType; onClick: () 
             <div
               className={`w-12 h-12 rounded-full flex items-center justify-center bg-${action.color}/5 group-hover:scale-110 transition-transform`}
             >
-              <action.icon className={`h-6 w-6`} />
+              <action.icon className={`h-12 w-12`} />
             </div>
 
             {/* ACTION DETAILS */}

@@ -15,13 +15,15 @@ function EndCallButton() {
 
   const interview = useQuery(api.interview.getInterviewByStreamCallId, {
     streamCallId: call?.id || "",
-  });
+  }); 
 
   if (!call || !interview) return null;
 
   const isMeetingOwner = localParticipant?.userId === call.state.createdBy?.id;
 
   if (!isMeetingOwner) return null;
+  console.log("This is The meeting Owener Status",isMeetingOwner);
+  
 
   const endCall = async () => {
     try {
@@ -32,7 +34,7 @@ function EndCallButton() {
         status: "completed",
       });
 
-      router.push("/inverviewer");
+      router.push("/dashboard");
       toast.success("Meeting ended for everyone");
     } catch (error) {
       console.log(error);
@@ -41,9 +43,13 @@ function EndCallButton() {
   };
 
   return (
-    <Button variant={"destructive"} onClick={endCall}>
+    
+      <Button variant={"destructive"} onClick={endCall}>
       End Meeting
-    </Button>
+    </Button> 
+  
+ 
+    
   );
 }
 export default EndCallButton;

@@ -4,7 +4,6 @@ import React from 'react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { QUICK_ACTIONS } from '@/Constant/main';
-import userRole from '@/components/hooks/userRole';
 import ActionCard from '@/components/ui/ActionCard';
 import MeetingDialog from '@/components/ui/MeetingDialog';
 import { useUser,SignIn } from '@clerk/nextjs';
@@ -28,9 +27,9 @@ const dashboard = () => {
 
 
   const router = useRouter();
-  const { isloading, Role } = userRole();
+  
   const [modalType, setModalType] = useState<"start" | "join">();
-  const isInterviewer = Role === 'interviewer';
+  
   const [showModal, setShowModal] = useState(false);
     
   const handleQuickAction = (title: string) => {
@@ -53,10 +52,10 @@ const dashboard = () => {
         <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">
           Welcome {user.firstName}
         </h1>
-        <p className="text-muted-foreground mt-2">
-          {isInterviewer
-            ? "Manage your interviews and review candidates effectively"
-            : "Access your upcoming interviews and preparations"}
+        <p className="text-muted-foreground mt-2 not-dark:text-gray-700">
+          
+          
+            Access your upcoming interviews and preparations
         </p>
       </div>
       

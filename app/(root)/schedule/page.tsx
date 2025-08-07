@@ -1,7 +1,7 @@
 "use client";
 import React from 'react'
 import LoaderUI from "@/components/ui/LoodingUI";
-import userRole from "@/components/hooks/userRole";
+import userRole from "@/components/hooks/useUser";
 import { useRouter } from "next/navigation";
 import InterviewScheduleUI from "./InterviewScheduleUI";
 

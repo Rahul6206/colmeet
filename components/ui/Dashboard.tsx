@@ -1,7 +1,9 @@
 'use client';
 import React from 'react'
-import userRole from '../hooks/userRole';
+import userRole from '../hooks/useUser';
 import Link from 'next/link';
+import LoaderUI from './LoodingUI';
+
 const Dashboard = () => {
   const {isloading} = userRole();
   if(isloading ) return null;

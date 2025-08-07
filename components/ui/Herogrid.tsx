@@ -10,12 +10,12 @@ export function GlowingEffectDemoSecond() {
         <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
             <GridItem
                 area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
-                backgroungImage={ <div className="h-10 w-10 flex items-center justify-center">
-                        <Box className="h-full w-full object-cover object-center text-black dark:text-neutral-400" />
-                       
-                    </div> }
-                title="Do things the right way"
-                description="Running out of copy so I'll write anything."
+                backgroungImage={<div className="h-10 w-10 flex items-center justify-center">
+                    <Box className="h-full w-full object-cover object-center text-black dark:text-neutral-400" />
+
+                </div>}
+                title="Schedule Interviews Effortlessly"
+                description="Easily set up and manage interview slots for candidates. Streamline your hiring process with automated scheduling."
             />
 
             <GridItem
@@ -23,11 +23,11 @@ export function GlowingEffectDemoSecond() {
                 backgroungImage={
                     <div className="h-10 w-10 flex items-center justify-center">
                         <Settings className="h-full w-full object-cover object-center text-black dark:text-neutral-400" />
-                       
+
                     </div>
                 }
-                title="The best AI code editor ever."
-                description="Yes, it's true. I'm not even kidding. Ask my mom if you don't believe me."
+                title="Seamless Interview Experience"
+                description="Conduct and participate in interviews with an intuitive, user-friendly interface designed for both interviewers and candidates."
             />
 
             <GridItem
@@ -37,8 +37,8 @@ export function GlowingEffectDemoSecond() {
                         <Lock className="h-full w-full object-cover object-center text-black dark:text-neutral-400" />
                     </div>
                 }
-                title="You should buy Aceternity UI Pro"
-                description="It's the best money you'll ever spend"
+                title="Secure & Private Meetings"
+                description="All interviews are encrypted and private, ensuring a safe environment for both interviewers and candidates."
             />
 
             <GridItem
@@ -48,8 +48,8 @@ export function GlowingEffectDemoSecond() {
                         <Sparkles className="h-full w-full object-cover object-center text-black dark:text-neutral-400" />
                     </div>
                 }
-                title="This card is also built by Cursor"
-                description="I'm not even kidding. Ask my mom if you don't believe me."
+                title="High Quality Audio and Video"
+                description="Experience crystal-clear audio and video during interviews, ensuring effective communication and a professional environment for both interviewers and candidates."
             />
 
             <GridItem
@@ -59,8 +59,8 @@ export function GlowingEffectDemoSecond() {
                         <Search className="h-full w-full object-cover object-center text-black dark:text-neutral-400" />
                     </div>
                 }
-                title="Coming soon on Aceternity UI"
-                description="I'm writing the code as I record this, no shit."
+                title="Real-Time Feedback"
+                description="Interviewers can provide instant feedback and ratings, helping candidates improve and companies make informed decisions."
             />
         </ul>
     );

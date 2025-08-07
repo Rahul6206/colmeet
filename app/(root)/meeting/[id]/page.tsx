@@ -22,7 +22,7 @@ const Meetings =  () => {
 const { id } = useParams<ProductPageParams>();  
   // const {id}= useParams();
   
-  const { call, isCallLoading } = useGetCallById(id);
+  const { call} = useGetCallById(id);
   const {isLoaded} =useUser();
    const [isSetupComplete, setIsSetupComplete] = useState(false);
   if (!isLoaded) return <LoaderUI />;

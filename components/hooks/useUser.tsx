@@ -13,7 +13,7 @@ const userRole = () => {
 
   return {
     isloading,
-    Role: Userdata?.role
+    
   }
     
   

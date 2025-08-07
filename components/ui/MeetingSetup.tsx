@@ -108,7 +108,7 @@ function MeetingSetup({ onSetupComplete }: { onSetupComplete: () => void }) {
                         <p className="text-sm text-muted-foreground">Configure devices</p>
                       </div>
                     </div>
-                    <div className="">
+                    <div >
                       <DeviceSettings visualType={undefined} />
                     </div>
                     

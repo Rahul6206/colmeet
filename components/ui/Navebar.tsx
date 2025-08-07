@@ -14,7 +14,9 @@ const Navebar = () => {
 
 
                 <div className="flex items-center justify-evenly space-x-4">
+                    <SignedIn>
                     <Dashboard />
+                    </SignedIn>
                     <ModeToggle />
                     <div className='text-black font-semibold dark:text-white'>
 
