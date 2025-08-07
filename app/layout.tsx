@@ -27,6 +27,7 @@ export default function RootLayout({
             disableTransitionOnChange>
               <div className="min-h-screen">
                 <Navebar />
+                
                 <main className="" >
 
               {children}

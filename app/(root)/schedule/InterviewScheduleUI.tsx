@@ -37,8 +37,7 @@ function InterviewScheduleUI() {
   const users = useQuery(api.users.getUsers) ?? [];
   const createInterview = useMutation(api.interview.createInterview);
 
-  const candidates = users?.filter((u) => u.role === "candidate");
-  const interviewers = users?.filter((u) => u.role === "interviewer");
+  
 
   const [formData, setFormData] = useState({
     title: "",
@@ -123,12 +122,12 @@ function InterviewScheduleUI() {
     }));
   };
 
-  const selectedInterviewers = interviewers.filter((i) =>
-    formData.interviewerIds.includes(i.clarkID)
+  const selectedInterviewers = users.filter((i) =>
+    formData.interviewerIds.includes(i.clarkId)
   );
 
-  const availableInterviewers = interviewers.filter(
-    (i) => !formData.interviewerIds.includes(i.clarkID)
+  const availableInterviewers = users.filter(
+    (i) => !formData.interviewerIds.includes(i.clarkId)
   );
 
   return (
@@ -137,7 +136,7 @@ function InterviewScheduleUI() {
         {/* HEADER INFO */}
         <div>
           <h1 className="text-3xl font-bold">Interviews</h1>
-          <p className="text-muted-foreground mt-1">Schedule and manage interviews</p>
+          <p className="text-muted-foreground mt-1 not-dark:text-black">Schedule and manage interviews</p>
         </div>
 
         {/* DIALOG */}
@@ -183,13 +182,15 @@ function InterviewScheduleUI() {
                   <SelectTrigger>
                     <SelectValue placeholder="Select candidate" />
                   </SelectTrigger>
-                  <SelectContent>
-                    {candidates.map((candidate) => (
-                      <SelectItem key={candidate.clarkID} value={candidate.clarkID}>
-                        <UserInfo user={candidate} />
+                    <SelectContent>
+                    {users.map((user) => (
+                      <SelectItem key={user.clarkId} value={user.clarkId}>
+                      <UserInfo user={user} />
+                       
                       </SelectItem>
                     ))}
-                  </SelectContent>
+                    
+                    </SelectContent>
                 </Select>
               </div>
 
@@ -199,13 +200,13 @@ function InterviewScheduleUI() {
                 <div className="flex flex-wrap gap-2 mb-2">
                   {selectedInterviewers.map((interviewer) => (
                     <div
-                      key={interviewer.clarkID}
+                      key={interviewer.clarkId}
                       className="inline-flex items-center gap-2 bg-secondary px-2 py-1 rounded-md text-sm"
                     >
                       <UserInfo user={interviewer} />
-                      {interviewer.clarkID !== user?.id && (
+                      {interviewer.clarkId !== user?.id && (
                         <button
-                          onClick={() => removeInterviewer(interviewer.clarkID)}
+                          onClick={() => removeInterviewer(interviewer.clarkId)}
                           className="hover:text-destructive transition-colors"
                         >
                           <XIcon className="h-4 w-4" />
@@ -221,7 +222,7 @@ function InterviewScheduleUI() {
                     </SelectTrigger>
                     <SelectContent>
                       {availableInterviewers.map((interviewer) => (
-                        <SelectItem key={interviewer.clarkID} value={interviewer.clarkID}>
+                        <SelectItem key={interviewer.clarkId} value={interviewer.clarkId}>
                           <UserInfo user={interviewer} />
                         </SelectItem>
                       ))}

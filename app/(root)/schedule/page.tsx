@@ -9,9 +9,9 @@ function Schedule() {
   const router = useRouter();
 
   const { Role, isloading } = userRole();
- const isInterviewer = Role === "interviewer";
+ const isInterviewer = Role === "interviewer" || "candidate";
   if (isloading) return <LoaderUI />;
-  if (!isInterviewer) return router.push("/inverviwer");
+  if (!isInterviewer) return router.push("/");
 
   return <InterviewScheduleUI />;
 }

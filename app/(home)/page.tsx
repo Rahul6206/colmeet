@@ -4,10 +4,30 @@ import { cn } from "@/lib/utils";
 import { GridPattern } from "@/components/magicui/grid-pattern";
 import SplitText from "@/components/ui/SplitText";
 import { MagicCard } from "@/components/magicui/magic-card";
-import {GlowingEffectDemoSecond} from "@/components/ui/Herogrid";
+import { GlowingEffectDemoSecond } from "@/components/ui/Herogrid";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import { useUser, SignIn, } from '@clerk/nextjs';
+import { useRouter } from 'next/navigation';
+import {AlertPage} from '@/components/ui/AlertPage'
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
+import { log } from 'console';
+
 
 export default function Home() {
+
+  const router = useRouter();
+
+const { isSignedIn, user } = useUser();
+function handleCreateMeeting(){
+  
+  
+  
+ 
+    return router.push(`/dashboard`)
+
+  };
+
+
   return (
     <div className="px-4 sm:px-6 lg:px-8  h-[80vh] w-full relative" >
 
@@ -57,9 +77,13 @@ export default function Home() {
         </div>
 
         <div className='flex items-center justify-evenly w-lvh '>
-          <InteractiveHoverButton   className="mt-4">Click Me</InteractiveHoverButton>
-          <InteractiveHoverButton className="mt-4">Click Me</InteractiveHoverButton>
-          
+          <SignedOut>
+          <AlertPage/>
+        </SignedOut>
+        <SignedIn>
+          <InteractiveHoverButton onClick={handleCreateMeeting}>Dashboard</InteractiveHoverButton>
+        </SignedIn>
+
         </div>
       </div>
       <div className='flex flex-col items-center justify-center gap-8 w-full h-fit mt-12'>
@@ -74,7 +98,7 @@ export default function Home() {
               <p className="text-center text-gray-600">Conduct interviews with high-quality video and audio, directly from your browser.</p>
             </div>
           </MagicCard> */}
-          
+
           <GlowingEffectDemoSecond />
 
         </div>
@@ -84,25 +108,25 @@ export default function Home() {
           <p className="text-sm">© 2023 Colmeet. All rights reserved.</p>
           <p className="text-sm">Made with <span className="text-red-500">❤️</span> by the Colmeet Team</p>
           <p className="text-sm">
-        Follow us on{' '}
-        <a
-          href="https://twitter.com/colmeet"
-          className="text-blue-500 hover:underline"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Twitter
-        </a>{' '}
-        for updates!
+            Follow us on{' '}
+            <a
+              href="https://twitter.com/colmeet"
+              className="text-blue-500 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Twitter
+            </a>{' '}
+            for updates!
           </p>
           <p className="text-sm">
-        Contact us at{' '}
-        <a
-          href="mailto:contact@colmeet.com"
-          className="text-blue-500 hover:underline"
-        >
-          contact@colmeet.com
-        </a>
+            Contact us at{' '}
+            <a
+              href="mailto:contact@colmeet.com"
+              className="text-blue-500 hover:underline"
+            >
+              contact@colmeet.com
+            </a>
           </p>
         </div>
       </footer>

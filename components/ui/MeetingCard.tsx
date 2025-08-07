@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./car
 import { CalendarIcon } from "lucide-react";
 import { Badge } from "./Badge";
 import { Button } from "./button";
+import { MagicCard } from "../magicui/magic-card";
 
 type Interview = Doc<"interviews">;
 
@@ -16,11 +17,12 @@ function MeetingCard({  intervie }: {  intervie: Interview }) {
   const formattedDate = format(new Date( intervie.startTime), "EEEE, MMMM d · h:mm a");
 
   return (
-    <Card>
+      <MagicCard className=' rounded-xl shadow-none' gradientSize={100}>
+    <Card className="z-10">
       <CardHeader className="space-y-2">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <CalendarIcon className="h-4 w-4" />
+          <div className="flex items-center gap-2 text-sm text-muted-foreground not-dark:text-black">
+            <CalendarIcon className="h-4 w-4 not-dark:text-black" />
             {formattedDate}
           </div>
 
@@ -28,15 +30,16 @@ function MeetingCard({  intervie }: {  intervie: Interview }) {
             variant={
               status === "live" ? "default" : status === "upcoming" ? "secondary" : "outline"
             }
+            
           >
             {status === "live" ? "Live Now" : status === "upcoming" ? "Upcoming" : "Completed"}
           </Badge>
         </div>
 
-        <CardTitle>{ intervie.title}</CardTitle>
+        <CardTitle className="not-dark:text-black" >{ intervie.title}</CardTitle>
 
         { intervie.description && (
-          <CardDescription className="line-clamp-2">{ intervie.description}</CardDescription>
+          <CardDescription className="line-clamp-2 not-dark:text-black">{ intervie.description}</CardDescription>
         )}
       </CardHeader>
 
@@ -54,6 +57,7 @@ function MeetingCard({  intervie }: {  intervie: Interview }) {
         )}
       </CardContent>
     </Card>
+    </MagicCard>
   );
 }
 export default MeetingCard;

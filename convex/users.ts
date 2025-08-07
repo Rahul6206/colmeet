@@ -12,14 +12,14 @@ export const syncUser = mutation({
     },
 
     handler: async (ctx, args) => {
-        const existuser = await ctx.db.query("user").filter(q => q.eq(q.field("clarkID"), args.clerkId)).first();
+        const existuser = await ctx.db.query("user").filter(q => q.eq(q.field("clarkId"), args.clerkId)).first();
         if (existuser) return
        return await ctx.db.insert("user", {
             name: args.name,
             email: args.email,
             profilePicture: args.image,
             role: "interviewer", // Default role, can be changed later
-            clarkID: args.clerkId
+            clarkId: args.clerkId
         });
 
 
@@ -43,7 +43,7 @@ export const getUserByClerkId = query({
   handler: async (ctx, args) => {
     const user = await ctx.db
       .query("user")
-      .withIndex("by_ClarkID", (q) => q.eq("clarkID", args.clerkId))
+      .withIndex("by_clarkId", (q) => q.eq("clarkId", args.clerkId))
       .first();
 
     return user;

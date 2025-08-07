@@ -8,8 +8,8 @@ user: defineTable({
     email: v.string(),
     profilePicture: v.optional(v.string()),
     role: v.union(v.literal("interviewer"), v.literal("candidate")),
-    clarkID: v.string() //Login and singup with Clerk ID
-}).index("by_ClarkID", ["clarkID"]),
+    clarkId: v.string() //Login and singup with Clerk ID
+}).index("by_clarkId", ["clarkId"]),
 
  interviews: defineTable({
     title: v.string(),
