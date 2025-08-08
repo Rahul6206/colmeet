@@ -45,9 +45,9 @@ function MeetingSetup({ onSetupComplete }: { onSetupComplete: () => void }) {
             </div>
 
             {/* VIDEO PREVIEW */}
-            <div className="mt-4 flex-1 min-h-[400px] rounded-xl overflow-hidden bg-muted/50 border relative">
-              <div className="absolute inset-0">
-                <VideoPreview className="h-full w-full" />
+            <div className="mt-4 flex-1 justify-center items-center max-h-[200px] sm:max-h-min rounded-xl overflow-hidden bg-muted/50 border ">
+              <div className="flex justify-center items-center h-full w-full">
+                <VideoPreview  />
               </div>
             </div>
           </Card>

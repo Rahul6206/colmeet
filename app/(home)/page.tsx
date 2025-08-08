@@ -39,7 +39,7 @@ export default function Home() {
 
           <SplitText
             text="Video Call Intreviews are Here!"
-            className="text-6xl font-bold text-center"
+            className="text-3xl sm:text-6xl  font-bold text-center"
             delay={40}
             duration={0.6}
             ease="power3.out"
@@ -53,7 +53,7 @@ export default function Home() {
           />
           <SplitText
             text="Welcome to Our Platform"
-            className="text-4xl font-bold text-center"
+            className="text-2xl sm:text-4xl font-bold text-center"
             delay={120}
             duration={0.8}
             ease="power3.out"

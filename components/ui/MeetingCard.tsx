@@ -19,7 +19,7 @@ function MeetingCard({  intervie }: {  intervie: Interview }) {
   const {theme}=useTheme();
 
   return (
-    <Card className="p-0 max-w-sm w-full shadow-none border-none h-full max-h-sm">
+    <Card className="p-0 max-w-sm w-full shadow-none border-none max-h-screen">
       <MagicCard gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
         className="pb-3 ">
       <CardHeader className=" p-4 [.border-b]:pb-4">

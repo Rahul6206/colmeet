@@ -10,15 +10,15 @@ function ActionCard({ action, onClick }: { action: QuickActionType; onClick: () 
 
 
     <div onClick={onClick} >
-      <SpotlightCard className="custom-spotlight-card cursor-pointer" spotlightColor="rgba(169, 246, 255, 0.632)" >
+      <SpotlightCard className="custom-spotlight-card cursor-pointer " spotlightColor="rgba(169, 246, 255, 0.632)" >
 
         {/* ACTION GRADIENT */}
         <div
-          className={`absolute inset-0  ${action.gradient.dark} not-dark:${action.gradient.light} opacity-100 group-hover:opacity-50 transition-opacity`}
+          className={`absolute inset-0   ${action.gradient.dark} not-dark:${action.gradient.light} opacity-100 group-hover:opacity-50 transition-opacity`}
         />
 
         {/* ACTION CONTENT WRAPPER */}
-        <div className="relative p-6 size-full">
+        <div className="relative p-0 sm:p-6 size-full">
           <div className="space-y-3">
             {/* ACTION ICON */}
             <div
