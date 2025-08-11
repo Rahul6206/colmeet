@@ -1,74 +1,78 @@
-### Colmeet - Video Calling Interview Platform
+# Colmeet - Video Calling Interview Platform
 
-![Screenshot of a colmeet Image.](/asstes/ReadmeImg.png)
+![Screenshot of a colmeet Image.](/assets/ReadmeImg.png)
 
 ## Live Demo:- https://colmeet.vercel.app/
-### Screen Sorts
+# Screen Sorts
+![Screenshot of a colmeet Image.](/assets/Homepage.png)
+![Screenshot of a colmeet Image.](/assets/Dashboard.png)
+![Screenshot of a colmeet Image.](/assets/Chatmeeting.png)
+![Screenshot of a colmeet Image.](/assets/ScreenSharing.png)
 
+## ✨ Features
+- 🧑‍💻 Live Code Editor for real-time coding assessments
+- 🖥️ Screen Sharing to review projects or workflows
+- 💬 Instant Chat for seamless communication
+- 📅 Meeting Scheduler to plan interviews effortlessly
+- 🔒 Secure Video Calls with high-quality streaming
 
+## 🛠️ Technology Stack
+- **Framework :** [Next.js](https://nextjs.org) 15 with App Router
+- **Styling :** [Tailwind CSS](https://tailwindcss.com/) for responsive, utility-first styling
+- **Animations :** [Shadcn UI](https://ui.shadcn.com/) for sophisticated animations and transitions
+- **Development :** TypeScript for type safety
+- **Authencation :** [Clerk](https://clerk.com/) for Secure Auth.
+- **Video & Audio :** [Stream](https://getstream.io/) for real time High Quality video and Audio conferencing
+- **Database :** [Convex](https://www.convex.dev/) the open-source reactive database for app developers
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🔧 Installation & Setup
+1. Clone the project:
+```
+git clone https://github.com/Rahul6206/colmeet.git
+cd colmeet
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install the dependencies:
+```
+npm install
+```
+3. Set up environment variables:
+   ```
+   # create .env.local file
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+   
+   # Deployment used by `npx convex dev`
+   
+   CONVEX_DEPLOYMENT=
+   NEXT_PUBLIC_CONVEX_URL=
+   
+   # stream devlopment keys:
+   
+   NEXT_PUBLIC_STREAM_API_KEY=
+   STREAM_SECRET_KEY=
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   # clerk devlopment keys:
+   
+   NEXT_PUBLIC_CLERK_FRONTEND_API_URL=
+   CLERK_WEBHOOK_SECRET=
+   NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL=
+   
+   ```
+4. Run the development server:
+   ```
+   npm run dev
+   npx convex dev
+   ```
+5. Open http://localhost:3000 in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 👏 Acknowledgements:
+- Design inspiration from modern  websites
+- Icons and animations inspired by current web design trends
+- Stream for Providing High Quality video,audio and chat messages
+- Clerk for Secure Authencation
+- Convex use for everything is just TypeScript
+Developed by Rahul Kumar  - [LinkedIn](www.linkedin.com/in/rahul-kumar-pramanik-799933352) | [GitHub](https://github.com/Rahul6206)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
