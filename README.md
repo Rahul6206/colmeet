@@ -37,7 +37,7 @@ cd colmeet
 npm install
 ```
 3. Set up environment variables:
-   ```
+   ```bash
    # create .env.local file
    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
    
